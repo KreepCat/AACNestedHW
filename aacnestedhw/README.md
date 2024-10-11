@@ -16,3 +16,14 @@ Meanwhile, the compiled output files will be generated in the `bin` folder by de
 ## Dependency Management
 
 The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+
+
+## Details
+
+Authors:
+* Catie M Baker (Initial code)
+* Prof. Rebelsky (Parts of AssociativeArray and all of KVPair + Exceptions + Tests)
+* Prof. Osera (Set up of Java Project)
+* Alex Pollock (Code for AACCategory and AACMappings)
+
+Code meant to provide a basic AAC that has the ability to grow and have categories. 
