@@ -10,8 +10,8 @@ import edu.grinnell.csc207.util.NullKeyException;
  *
  */
 public class AACCategory implements AACPage {
-	AssociativeArray<String, String> image;
-	String name;
+	AssociativeArray<String, String> image; // The images in the category and the associated words
+	String name; // The name of the category
 
 	/**
 	 * Creates a new empty category with the given name
@@ -20,7 +20,7 @@ public class AACCategory implements AACPage {
 	 */
 	public AACCategory(String name) {
 		this.name = name;
-		image = new AssociativeArray<String,String>();
+		this.image = new AssociativeArray<String,String>();
 	} // AACCategory(String)
 
 	/**

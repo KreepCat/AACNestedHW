@@ -27,3 +27,5 @@ Authors:
 * Alex Pollock (Code for AACCategory and AACMappings)
 
 Code meant to provide a basic AAC that has the ability to grow and have categories. 
+
+Github url: https://github.com/KreepCat/AACNestedHW.git

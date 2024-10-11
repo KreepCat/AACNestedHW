@@ -46,10 +46,12 @@ public class AACMappings implements AACPage {
 		try {
 			BufferedReader eyes = new BufferedReader(new FileReader(filename));
 			String line;
+
 			cats = new AssociativeArray<String,AACCategory>();
 			home = new AACCategory("");
 			overaching = new AssociativeArray<String,String>();
 			categoryCurrent = home;
+
 			while ((line = eyes.readLine()) != null) {
 				String lineSplit[] = line.split(" ", 2);
 				if (lineSplit[0].charAt(0) != '>') {
@@ -132,6 +134,7 @@ public class AACMappings implements AACPage {
 		try {
 			FileWriter pen = new FileWriter(filename);
 			String[] bigNames = home.getImageLocs();
+
 			for (int i = 0; i<bigNames.length; i++){
 				String line = bigNames[i] + overaching.get(bigNames[i])+"\n";
 				pen.write(line);
@@ -142,6 +145,7 @@ public class AACMappings implements AACPage {
 					pen.write(line);
 				} // for
 			} // for
+			
 			pen.close();
 		} catch (Exception e) {
 			System.err.println("Failed to write in file: " + filename);
