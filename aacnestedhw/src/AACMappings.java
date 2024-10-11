@@ -63,13 +63,11 @@ public class AACMappings implements AACPage {
 				} // if/else
 			} // while
 			eyes.close();
-			
 		} catch (Exception e) {
 			System.err.println("File Not Found");
-		}
+		} // try/catch
 		categoryCurrent = home;
-
-	}
+	} // AACMappings(String)
 
 	/**
 	 * Given the image location selected, it determines the action to be taken. This can be updating
@@ -89,14 +87,14 @@ public class AACMappings implements AACPage {
 				if (categoryCurrent.equals(home)){
 					categoryCurrent = cats.get(imageLoc);
 					return "";
-				}
+				} // if
 				return categoryCurrent.select(imageLoc);
-			}
+			} // if
 		} catch (Exception e) {
 			throw new NoSuchElementException();
-		}
+		} // try/catch
 		throw new NoSuchElementException();
-	}
+	} // select(String)
 
 	/**
 	 * Provides an array of all the images in the current category
@@ -106,7 +104,7 @@ public class AACMappings implements AACPage {
 	 */
 	public String[] getImageLocs() {
 		return categoryCurrent.getImageLocs();
-	}
+	} // getImageLocs()
 
 	/**
 	 * Resets the current category of the AAC back to the default category
@@ -135,20 +133,20 @@ public class AACMappings implements AACPage {
 			FileWriter pen = new FileWriter(filename);
 			String[] bigNames = home.getImageLocs();
 			for (int i = 0; i<bigNames.length; i++){
-				String line = bigNames[i] + overaching.get(bigNames[i]);
+				String line = bigNames[i] + overaching.get(bigNames[i])+"\n";
 				pen.write(line);
 				this.select(bigNames[i]);
 				String[] smallNames = this.getImageLocs();
 				for (int n = 0; n<smallNames.length;n++){
-					line = smallNames[n] + overaching.get(smallNames[n]);
+					line = smallNames[n] + overaching.get(smallNames[n]) + "\n";
 					pen.write(line);
-				}
-			}
+				} // for
+			} // for
 			pen.close();
 		} catch (Exception e) {
-
-		}
-	}
+			System.err.println("Failed to write in file: " + filename);
+		} // try/catch
+	} // writeToFile(String)
 
 	/**
 	 * Adds the mapping to the current category (or the default category if that is the current
@@ -163,10 +161,11 @@ public class AACMappings implements AACPage {
 			try {
 				cats.set(imageLoc, newCat);
 			} catch (Exception e) {
-			}
-		}
+				System.err.println("Failed to add item");
+			} // try/catch
+		} // if
 		categoryCurrent.addItem(imageLoc, text);
-	}
+	} // addItem(String,String)
 
 
 	/**
@@ -177,9 +176,9 @@ public class AACMappings implements AACPage {
 	public String getCategory() {
 		if (this.categoryCurrent == this.home) {
 			return "";
-		}
+		} // if
 		return this.categoryCurrent.name;
-	}
+	} // getCategory()
 
 
 	/**
@@ -191,9 +190,9 @@ public class AACMappings implements AACPage {
 	 */
 	public boolean hasImage(String imageLoc) {
 		return this.overaching.hasKey(imageLoc);
-	}
+	} // hasImage(String)
 
 	public boolean hasCategory(String imageloc){
 		return cats.hasKey(imageloc);
-	}
-}
+	} // hasCategory(String)
+} // class AACMappings

@@ -21,7 +21,7 @@ public class AACCategory implements AACPage {
 	public AACCategory(String name) {
 		this.name = name;
 		image = new AssociativeArray<String,String>();
-	}
+	} // AACCategory(String)
 
 	/**
 	 * Adds the image location, text pairing to the category
@@ -33,9 +33,9 @@ public class AACCategory implements AACPage {
 		try {
 			this.image.set(imageLoc, text);
 		} catch (Exception e) {
-			
+			System.err.println("Failed to add item");
 		} // try/catch
-	}
+	} // addItem(String,String)
 
 	/**
 	 * Returns an array of all the images in the category
@@ -44,7 +44,7 @@ public class AACCategory implements AACPage {
 	 */
 	public String[] getImageLocs() {
 		return this.image.getKeys();
-	}
+	} // getImageLocs()
 
 	/**
 	 * Returns the name of the category
@@ -53,7 +53,7 @@ public class AACCategory implements AACPage {
 	 */
 	public String getCategory() {
 		return this.name;
-	}
+	} // getCategory()
 
 	/**
 	 * Returns the text associated with the given image in this category
@@ -67,10 +67,8 @@ public class AACCategory implements AACPage {
 			return this.image.get(imageLoc);
 		} catch (Exception e) {
 			throw new NoSuchElementException();
-		}
-
-
-	}
+		} // try/catch
+	} // select(String)
 
 	/**
 	 * Determines if the provided images is stored in the category
@@ -80,5 +78,5 @@ public class AACCategory implements AACPage {
 	 */
 	public boolean hasImage(String imageLoc) {
 		return image.hasKey(imageLoc);
-	}
-}
+	} // hasImage(String)
+} // class AACPage
