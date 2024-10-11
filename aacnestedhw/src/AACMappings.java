@@ -27,7 +27,7 @@ public class AACMappings implements AACPage {
 	AssociativeArray<String, AACCategory> cats; // The categories
 	AACCategory home; // The home category
 
-	/**
+	/**Attention
 	 * Creates a set of mappings for the AAC based on the provided file. The file is read in to create
 	 * categories and fill each of the categories with initial items. The file is formatted as the
 	 * text location of the category followed by the text name of the category and then one line per
@@ -145,7 +145,7 @@ public class AACMappings implements AACPage {
 					pen.write(line);
 				} // for
 			} // for
-			
+
 			pen.close();
 		} catch (Exception e) {
 			System.err.println("Failed to write in file: " + filename);
