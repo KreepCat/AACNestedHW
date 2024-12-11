@@ -29,3 +29,11 @@ Authors:
 Code meant to provide a basic AAC that has the ability to grow and have categories. 
 
 Github url: https://github.com/KreepCat/AACNestedHW.git
+
+Details For Resubmittion:
+
+The error:
+
+Exception in thread "main" java.lang.NullPointerException: Cannot invoke "edu.grinnell.csc207.util.AssociativeArray.getKeys()" because "this.image" is null, leading the file couldn't be compiled
+
+Has not been observed by me. Additionally due to the different nature of this MP you are not looking to open the aacnestedhw folder inside the AACNestedHW folder. My appologies for any difficulty in accessing this but this project was made before a solution was found and is no longer compatable with the given solution.
