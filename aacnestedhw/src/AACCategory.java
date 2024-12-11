@@ -6,11 +6,11 @@ import edu.grinnell.csc207.util.NullKeyException;
 /**
  * Represents the mappings for a single category of items that should be displayed
  * 
- * @author Catie Baker & YOUR NAME HERE
+ * @author Catie Baker & Alex Pollock
  *
  */
 public class AACCategory implements AACPage {
-	AssociativeArray<String, String> image; // The images in the category and the associated words
+	AssociativeArray<String, String> image = new AssociativeArray<String,String>(); // The images in the category and the associated words
 	String name; // The name of the category
 
 	/**
@@ -20,7 +20,6 @@ public class AACCategory implements AACPage {
 	 */
 	public AACCategory(String name) {
 		this.name = name;
-		this.image = new AssociativeArray<String,String>();
 	} // AACCategory(String)
 
 	/**

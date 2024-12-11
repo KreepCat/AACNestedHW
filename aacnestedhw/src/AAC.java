@@ -223,6 +223,7 @@ public class AAC implements ActionListener {
 					e1.printStackTrace();
 				}
 			}
+			
 		}
 		loadImages(NUM_ACROSS, NUM_DOWN);
 

@@ -17,7 +17,7 @@ import java.util.NoSuchElementException;
  * for interacting with the categories and updating the set of images that would be shown and
  * handling an interactions.
  * 
- * @author Catie Baker & YOUR NAME HERE
+ * @author Catie Baker & Alex Pollock
  *
  */
 public class AACMappings implements AACPage {
